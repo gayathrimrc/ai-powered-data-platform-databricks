@@ -1,0 +1,13 @@
+import streamlit as st
+import pandas as pd
+
+st.title("Customer Churn Dashboard")
+
+customers = pd.read_csv("high_risk_customers.csv")
+
+st.metric(
+    "High Risk Customers",
+    len(customers)
+)
+
+st.dataframe(customers)
